@@ -1,7 +1,7 @@
 # MultRegression
 ## MATLAB / Octave toolbox for Multiple &amp; Multivariate Regression with several advanced modeling techniques.
 
-This is a "toolbox" of code for performing both Multiple and Multivariate regression with several advanced modeling techniques.  Specifically, it includes:
+This is a "toolbox" of code for performing both Multiple and Multivariate regression with several advanced modeling techniques.  I have worked on this code, off and on, since 2007.  It was adopted to work with Octave 3.4.3 in 2012.  Specifically, it includes:
 - Genetic algorithm to identify optimal subset regression model
 - Computation of various information-theoretic model selection criteria
 - Creation of complex regression simulation protocols
@@ -20,5 +20,3 @@ Perform optimal subsets analysis for multiple regression (subset X only) driven 
 
 ## MultVarRegGASub_DRV
 Same as above, but for multivariate regression.  Only the regressors are subset.
-
-I have worked on this code, off and on, since 2007.  It was adopted to work with Octave 3.4.3 in 2012.
