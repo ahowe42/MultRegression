@@ -15,20 +15,6 @@ function outstr = StrPad(inpstr,len,LRS,padchar)
   Example: a = StrPad('Andrew Howe',15,'S','*')
 
  See Also table2str, ICSubTable, DispMeanCovar, MatrixtoStr, MakeLaTeXTable.
- 
-Copyright (C) 2006 J. Andrew Howe
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
 %}
 
 LRS = upper(LRS); [row,col] = size(inpstr);
@@ -62,4 +48,18 @@ for cntr = 1:row
     end    
 end
 
-% JAH 20060408, adapted for octave 3.4.3 20120305
+%{JAH 20060408, adapted for octave 3.4.3 20120305
+ 
+Copyright (C) 2006 J. Andrew Howe
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
