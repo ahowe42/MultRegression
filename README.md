@@ -10,6 +10,10 @@ This is a "toolbox" of code for performing both Multiple and Multivariate regres
 
 There are four driver scripts which control everything.
 
+Parts of this code were used in these publications:
+- Bozdogan, H., Howe, J. A., April 2012. [Misspecified Multivariate Regression Models Using the Genetic Algorithm and Information  Complexity as the Fitness Function](http://ejpam.com/index.php/ejpam/article/view/1597). European Journal of Pure and Applied Mathematics 5 (2), 211–249.
+- Bozdogan, H., Howe, J. A., Katragadda, S., Liberati, C., 2013. [Misspecification Resistant Model Selection Using Information Complexity with Applications](http://link.springer.com/chapter/10.1007%2F978-3-642-28894-4_20). Springer-Verlag, Berlin, pp. 165–172.
+
 ## MultRegAllSub_DRV
 Perform all subsets analysis for multiple regression (only the regressors are subset), and compute various information criteria scores.  If you tell this to use simulated data, this can run multiple simulations, and determine how often each criterion selected the "true" model.
 
