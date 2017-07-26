@@ -14,6 +14,8 @@ function tablestr = table2str(colheads,data,format,colpad,rowheads)
   string table --- string matrix of formatted table
 
   See Also StrPad, ICSubTable, DispMeanCovar, MatrixtoStr, MakeLaTeXTable.
+  
+  Copyright (C) 2005 J. Andrew Howe; see below
 %}
 
 [datr,datc] = size(data);

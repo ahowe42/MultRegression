@@ -15,6 +15,8 @@ function outstr = StrPad(inpstr,len,LRS,padchar)
   Example: a = StrPad('Andrew Howe',15,'S','*')
 
  See Also table2str, ICSubTable, DispMeanCovar, MatrixtoStr, MakeLaTeXTable.
+ 
+ Copyright (C) 2006 J. Andrew Howe
 %}
 
 LRS = upper(LRS); [row,col] = size(inpstr);
