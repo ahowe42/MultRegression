@@ -10,7 +10,7 @@ This is a "toolbox" of code for performing both Multiple and Multivariate regres
 There are four driver scripts which control everything.
 
 ## MultRegAllSub_DRV
-Perform all subsets analysis for multiple regression, and compute various information criteria scores.  If you tell it to use simulated data, this can run multiple simulations, and determine how often each criterion selected the "true" model.
+Perform all subsets analysis for multiple regression (subset X only), and compute various information criteria scores.  If you tell this to use simulated data, this can run multiple simulations, and determine how often each criterion selected the "true" model.
 
 ## MultVarRegAllSub_DRV
 Same as above, but for multivariate regression.  Only the regressors are subset.
