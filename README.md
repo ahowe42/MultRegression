@@ -25,3 +25,8 @@ Perform optimal subsets analysis for multiple regression (only the regressors ar
 
 ## MultVarRegGASub_DRV
 Same as above, but for multivariate regression.
+
+## Miscellaneous Comments
+- This has been tested and verified to work with MATLAB R2015a
+- This was previously tested and verified to work with Octave 3.4.3
+- The subfolders `data`, `support`, and `violation_check` must be in the MATLAB / Octave path
