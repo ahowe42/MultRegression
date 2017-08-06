@@ -43,8 +43,9 @@ if data_type == 1   % simulated
 	rand('state',rnd_stat); randn('state',rnd_stat); randg('state',rnd_stat);
 else                % real
     [data_file,data_path] = uigetfile('*.*', 'Load Real Data File',[mydir,filesep,'data',filesep]);
-    answer = inputdlg({'Covariance Smoother'},'Experiment Parameters',1,{'MLE/EB'},'off');
-    regul_func = char(answer);
+    answer = inputdlg({'Covariance Smoother','Keep Constant'},'Experiment Parameters',1,{'MLE/EB','1'},'off');
+    regul_func = char(answer{1});
+    KeepConstant = str2double(answer{2});		% JAH added keep constant flag 20140330 
     mciter = 1;
 end
 dispgran = ceil(0.2*mciter);
@@ -92,10 +93,10 @@ clc,diary([outdir,outfil,'.out']);
 % display settings
 disp(repmat('@',1,50))
 disp(sprintf('MultVarRegAllSub_DRV run on %4.0f%02.0f%02.0f_%02.0f%02.0f%02.0f',clock))
-disp(sprintf('Random State: %10.0f',rnd_stat))
 disp(repmat('#',1,50))
 if data_type == 1
     disp(['Using Simulated Data: Data File: ',data_file])
+    disp(sprintf('Random State: %10.0f',rnd_stat))
 else
     disp(['Using Real Data: Data File: ',data_file])
 end

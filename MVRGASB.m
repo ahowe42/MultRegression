@@ -57,7 +57,12 @@ for gencnt = 1:num_generns
             preveval = find(sum(allchroms == repmat(population(popcnt,:),size(allchroms,1),1),2) == px);
             if isempty(preveval)
 				if (mvflag == 1)
-                	pop_fitness(popcnt,1) = MultVarRegGASub_IC(objec_func,Y,X,population(popcnt,:),regul_func,trueM);
+                    if (data_type == 1)
+                        pop_fitness(popcnt,1) = MultVarRegGASub_IC(objec_func,Y,X,population(popcnt,:),regul_func,trueM);
+                    else
+                        % no trueM if simulated JAH 20170806
+                        pop_fitness(popcnt,1) = MultVarRegGASub_IC(objec_func,Y,X,population(popcnt,:),regul_func,{});
+                    end
 				else
 					[pop_fitness(popcnt,1),lof,pen,bet,tmp] = MultRegGASub_IC(objec_func,Y,X,population(popcnt,:),regul_func,constlim);
                     conststatus(popcnt) = {tmp}; % JAH 20150630 can't put a struct directly into a cell without the {} in MATLAB, though it worked ok in octave
@@ -72,7 +77,12 @@ for gencnt = 1:num_generns
             end
         else
 			if (mvflag == 1)
-		    	pop_fitness(popcnt,1) = MultVarRegGASub_IC(objec_func,Y,X,population(popcnt,:),regul_func,trueM);
+                if (data_type == 1)
+                    pop_fitness(popcnt,1) = MultVarRegGASub_IC(objec_func,Y,X,population(popcnt,:),regul_func,trueM);
+                else
+                    % no trueM if simulated JAH 20170806
+                    pop_fitness(popcnt,1) = MultVarRegGASub_IC(objec_func,Y,X,population(popcnt,:),regul_func,{});
+                end
 			else
 				[pop_fitness(popcnt,1),lof,pen,bet,tmp] = MultRegGASub_IC(objec_func,Y,X,population(popcnt,:),regul_func,constlim);
                 conststatus(popcnt) = {tmp}; % JAH 20150630 can't put a struct directly into a cell without the {} in MATLAB, though it worked ok in octave
@@ -263,14 +273,16 @@ if (data_type == 1)
 end
 
 % also show the score for the saturated model JAH 20140328 changed to test constraints and display the result
-if (mvflag == 1)
-	satIC = MultVarRegGASub_IC(objec_func,Y,X,ones(1,px),regul_func,trueM);
-	obj = sprintf('%s for saturated model: %0.2f',objec_func,trueIC);
-else
-	[satIC,lof,pen,bet,satconst] = MultRegGASub_IC(objec_func,Y,X,ones(1,px),regul_func,constlim);
-	obj = sprintf('%s for saturated model: %0.2f, Constraints Violated: %s (score = %0.2f)',objec_func,satIC,satconst.STR,satconst.SCORE);
+if (data_type == 1)
+    if (mvflag == 1)
+        satIC = MultVarRegGASub_IC(objec_func,Y,X,ones(1,px),regul_func,trueM);
+        obj = sprintf('%s for saturated model: %0.2f',objec_func,trueIC);
+    else
+        [satIC,lof,pen,bet,satconst] = MultRegGASub_IC(objec_func,Y,X,ones(1,px),regul_func,constlim);
+        obj = sprintf('%s for saturated model: %0.2f, Constraints Violated: %s (score = %0.2f)',objec_func,satIC,satconst.STR,satconst.SCORE);
+    end
+    disp(obj)
 end
-disp(obj)
 disp(lin)
 
 % get rid of unneeded variables

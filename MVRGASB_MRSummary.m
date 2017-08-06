@@ -112,15 +112,15 @@ if (data_type == 1)
 		obj = sprintf('\n%s for true model (last run): %0.2f, Constraints Violated: %s (score = %0.2f)',objec_func,trueIC,trueconst.STR,trueconst.SCORE);
 	end
     disp(obj)
+    if (mvflag == 1) % JAH 20120309
+        satIC = MultVarRegGASub_IC(objec_func,Y,X,ones(1,px),regul_func,trueM);
+        obj = sprintf('%s for saturated model (last run): %0.2f',objec_func,satIC);
+    else
+        [satIC,lof,pen,bet,satconst] = MultRegGASub_IC(objec_func,Y,X,ones(1,px),regul_func,constlim);
+        obj = sprintf('%s for saturated model (last run): %0.2f, Constraints Violated: %s (score = %0.2f)',objec_func,satIC,satconst.STR,satconst.SCORE);
+    end
+    disp(obj)
 end
-if (mvflag == 1) % JAH 20120309
-	satIC = MultVarRegGASub_IC(objec_func,Y,X,ones(1,px),regul_func,trueM);
-	obj = sprintf('%s for saturated model (last run): %0.2f',objec_func,satIC);
-else
-	[satIC,lof,pen,bet,satconst] = MultRegGASub_IC(objec_func,Y,X,ones(1,px),regul_func,constlim);
-	obj = sprintf('%s for saturated model (last run): %0.2f, Constraints Violated: %s (score = %0.2f)',objec_func,satIC,satconst.STR,satconst.SCORE);
-end
-disp(obj)
 disp(lin)
 disp(sprintf('Modeling Completed in \n\t%1.4f Seconds\n\t%1.4f Minutes\n\t%1.4f Hours',tottim./[1,60,3600]));
 diary off
