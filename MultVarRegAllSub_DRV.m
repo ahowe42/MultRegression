@@ -27,8 +27,8 @@ data_type = 1+isequal('Real',questdlg('Use Simulated or Real Data?',...
 if data_type == 1   % simulated
     [data_file,data_path] = uigetfile('*.m', 'Load Simulated Data File',[mydir,filesep,'data',filesep]);
     answer = inputdlg({'Number Simulations','Number Noise Variables',...
-        'Number Observations','Covariance Smoother','Random State'},'Experiment Parameters',...
-        1,{'100','4','500','MLE/EB','0'},'off');
+        'Number Observations','Covariance Smoother','Random State','Keep Constant'},'Experiment Parameters',...
+        1,{'100','4','500','MLE/EB','0','1'},'off');
     % get the parameters
     mciter = str2num(char(answer(1)));
     extra_vars = str2num(char(answer(2)));
@@ -40,7 +40,8 @@ if data_type == 1   % simulated
 	else
 		rnd_stat = str2num(char(answer(5)));
     end
-	rand('state',rnd_stat); randn('state',rnd_stat); randg('state',rnd_stat);
+	rand('state',rnd_stat); randn('state',rnd_stat); %randg('state',rnd_stat);
+    KeepConstant = str2double(answer{6});		% JAH added keep constant flag 20140330 
 else                % real
     [data_file,data_path] = uigetfile('*.*', 'Load Real Data File',[mydir,filesep,'data',filesep]);
     answer = inputdlg({'Covariance Smoother','Keep Constant'},'Experiment Parameters',1,{'MLE/EB','1'},'off');
@@ -114,7 +115,7 @@ for mccnt = 1:mciter
     end
     for subcnt = 1:numsubs
         for iccnt = 1:numIC
-            subset_scores(subcnt,iccnt) = MultVarRegGASub_IC(IC{iccnt},Y,X,subsets(subcnt,:),regul_func,true);
+            subset_scores(subcnt,iccnt) = MultVarRegGASub_IC(IC{iccnt},Y,X,subsets(subcnt,:),regul_func,trueM);
         end         % information criteria loop
     end             % subsets loop
     % now that we've got all the IC values, increment count of how many
