@@ -86,7 +86,8 @@ viola.TOTAL = viola.modelp + viola.multicollin + viola.errornormal + viola.heter
 viola.SCORE = viola.modelp*confviola.p_weight + viola.multicollin*confviola.m_weight + viola.errornormal*confviola.e_weight + viola.heteros*confviola.h_weight;
 
 %{
-Copyright (C) 2013 J. Andrew Howe
+Copyright (C) 2013 Oguz Akbilgic & J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
