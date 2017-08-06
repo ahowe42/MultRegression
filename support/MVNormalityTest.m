@@ -1,5 +1,7 @@
 function [kurt,skew] = MVNormalityTest(data,silent,alpha)
-%{ [kurt results, skew results] = MVNormalityTest(data, silent, alpha)
+%{
+  [kurt results, skew results] = MVNormalityTest(data, silent, alpha)
+
   Performs Mardia's tests for multivariate normality on a data sample.
   The tests for skewness and kurtosis will both be performed.  
   The hypothesis test for kurtosis is two-sided, with the test stat being
@@ -118,9 +120,11 @@ if not(silent)
     set(FH,'position',[loc([1,2]),6,2.5])
 end
 
-%{ JAH 20070516, adapted for octave 3.4.3 20120305
+%{
+JAH 20070516, adapted for octave 3.4.3 20120305
 
 Copyright (C) 2007 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -132,4 +136,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}

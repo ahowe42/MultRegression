@@ -1,5 +1,7 @@
 function [bin_comb, subs] = VarSubset(datamatrix)
-%{ [binary results, subsets] = VarSubset(data matrix)
+%{
+  [binary results, subsets] = VarSubset(data matrix)
+
   Compute all combinatorial nonempty subsets of columns of a data matrix.
 
   Where
@@ -13,9 +15,9 @@ function [bin_comb, subs] = VarSubset(datamatrix)
 
   Example: dat = rand(10,4); [bin,subs] = VarSubset(dat); bin, subs{8}
 
- See Also ICSubTable
+  See Also ICSubTable
 
-Copyright (C) 2006 J. Andrew Howe; see below
+  Copyright (C) 2006 J. Andrew Howe; see below
 %}
 
 if (nargin ~= 1)
@@ -41,9 +43,11 @@ for subcnt = 1:(2^p-1) % subtract 1, since we ignore the option of no variables
     subs{subcnt} = datamatrix(:,logical(bin_comb(subcnt,[2:end])));
 end
 
-%{ JAH 20060131, adapted for octave 3.4.3 20120305
+%{
+JAH 20060131, adapted for octave 3.4.3 20120305
 
 Copyright (C) 2006 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -55,4 +59,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}

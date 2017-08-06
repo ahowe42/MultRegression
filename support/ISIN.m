@@ -1,5 +1,7 @@
 function res = ISIN(srch_for, srch_in, ret)
-%{ search results = ISIN(data to find, where to find it, return type)
+%{
+  search results = ISIN(data to find, where to find it, return type)
+
   This will search a numeric matrix for specific values.
 
   Where
@@ -11,7 +13,7 @@ function res = ISIN(srch_for, srch_in, ret)
 
   Example: d = unidrnd(10,10,1), ISIN([2,5],d,0)
 
-Copyright (C) 2006 J. Andrew Howe
+  Copyright (C) 2006 J. Andrew Howe
 %}
 
 if nargin ~= 3
@@ -26,9 +28,11 @@ for srchcnt = 1:prod(size(srch_for))
 end
 if ret == 1; res = sign(res); end;
 
-%{ JAH 20060222, adapted for octave 3.4.3 20120305
+%{
+JAH 20060222, adapted for octave 3.4.3 20120305
 
 Copyright (C) 2006 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -40,4 +44,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}

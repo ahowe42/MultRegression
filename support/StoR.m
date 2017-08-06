@@ -1,5 +1,7 @@
 function R = StoR(S)
-%{ correlation matrix = StoR(covariance matrix)
+%{
+  correlation matrix = StoR(covariance matrix)
+
   Convert a covariance matrix into correlation form.
 
   Where
@@ -9,7 +11,7 @@ function R = StoR(S)
   Example: R = StoR([1,-2,0;-2,5,0;0,0,2])
   
   Copyright (C) 2007 J. Andrew Howe; see below
-  %}
+%}
   
 [p,p2] = size(S);
 
@@ -22,9 +24,11 @@ dg = diag(S);               % just get the diagonal elements
 isdg = diag(1./sqrt(dg));   % reciprocal of standard deviations
 R = isdg*S*isdg;
 
-%{ JAH 20070812, adapted for octave 3.4.3 20120315
+%{
+JAH 20070812, adapted for octave 3.4.3 20120315
 
 Copyright (C) 2007 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -36,4 +40,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}

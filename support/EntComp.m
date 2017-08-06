@@ -1,6 +1,8 @@
 function C1 = EntComp(sqmat,IFIM)
-%{ complexity = EntComp(square matrix, type switch)
- Calculate the C1 or C1f Entropic Complexity Measure of a matrix 
+%{
+  complexity = EntComp(square matrix, type switch)
+
+  Calculate the C1 or C1f Entropic Complexity Measure of a matrix 
   (presumably covariance matrix) from multivariate data.
 
   Where
@@ -13,7 +15,7 @@ function C1 = EntComp(sqmat,IFIM)
 
   Example: c1 = EntComp(randn(4),1)
 
-Copyright (C) 2006 J. Andrew Howe
+  Copyright (C) 2006 J. Andrew Howe
 %}
 
 [p,p2] = size(sqmat);
@@ -42,9 +44,11 @@ else
     end
 end
 
-%{ JAH 20060128, adapted for octave 3.4.3 20120315
+%{
+JAH 20060128, adapted for octave 3.4.3 20120315
 
 Copyright (C) 2006 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -56,4 +60,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}

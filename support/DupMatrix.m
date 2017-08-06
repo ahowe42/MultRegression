@@ -1,5 +1,7 @@
 function [Dp,mopeninv] = DupMatrix(p)
-%{ [dupmat, mopeninv] = DupMatrix(number dimensions)
+%{
+  [dupmat, mopeninv] = DupMatrix(number dimensions)
+
   Returns Magnus and Neudecker's duplication matrix of size p, and the
   moore-penrose inverse of Dp - Dp+.
 
@@ -10,7 +12,7 @@ function [Dp,mopeninv] = DupMatrix(p)
 
   [Dp,mopeninv] = DupMatrix(2)
 
-Copyright (C) 2006 J. Andrew Howe
+  Copyright (C) 2006 J. Andrew Howe
 %}
 
 a = tril(ones(p));
@@ -27,9 +29,11 @@ end
 
 if nargout == 2; mopeninv = inv(Dp'*Dp)*Dp'; end;
 
-%{ JAH 20061106, adapted for octave 3.4.3 20120305
+%{
+JAH 20061106, adapted for octave 3.4.3 20120305
 
 Copyright (C) 2007 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or

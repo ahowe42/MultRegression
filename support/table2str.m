@@ -1,5 +1,7 @@
 function tablestr = table2str(colheads,data,format,colpad,rowheads)
-%{ string table = table2str(col heads, data, formats, col pad, row heads)
+%{
+  string table = table2str(col heads, data, formats, col pad, row heads)
+
   This function takes in a table of numbers, and returns a nicely
   formatted character string table that can be displayed with disp().
 
@@ -88,9 +90,11 @@ if not(isequal(colpad,0))
     end             % colpad loop
 end
 
-%{ JAH 20051207, adapted for octave 3.4.3 20120305
+%{
+JAH 20051207, adapted for octave 3.4.3 20120305
 
 Copyright (C) 2005 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -102,4 +106,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}

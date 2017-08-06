@@ -1,5 +1,7 @@
 function outstr = StrPad(inpstr,len,LRS,padchar)
-%{ padded string = StrPad(input string, desired length, pad type, pad char)
+%{
+  padded string = StrPad(input string, desired length, pad type, pad char)
+
   Take a string and pad it with spaces (or a desired character.  Padding
   can be done on the left, right, or split so the input string is
   centered.  If the length is already >= the desired length, nothing is
@@ -50,9 +52,11 @@ for cntr = 1:row
     end    
 end
 
-%{JAH 20060408, adapted for octave 3.4.3 20120305
+%{
+JAH 20060408, adapted for octave 3.4.3 20120305
  
 Copyright (C) 2006 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -64,4 +68,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}

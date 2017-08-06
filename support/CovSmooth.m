@@ -1,6 +1,8 @@
 function smcov = CovSmooth(data_matrix,meth,swtch,ifprob,numobs,regul_amnt)
-%{ covariance = CovSmooth(data/covariance matrix, smoothing method code,
- data input switch, problem only, number observations, regularization amount)
+%{
+  covariance = CovSmooth(data/covariance matrix, smoothing method code,
+  data input switch, problem only, number observations, regularization amount)
+
   Compute a smooth or robust estimator of a covariance matrix, either from
   a covariance matrix or the original data.  If covsmooth is set to only
   smooth in case of a bad matrix , and the matrix is not bad, it just 
@@ -10,16 +12,16 @@ function smcov = CovSmooth(data_matrix,meth,swtch,ifprob,numobs,regul_amnt)
   Where
   data/covariance matrix --- either data or covariance
   smoothing method code --- string as shown below
-    'MLE' = maximum likelihood estimator
-    'MAXENT' = maximum entropy - Fiebig 1982 - DON'T USE IF SWITCH = 0
-    'MLE/EB' = maximum likelihood / empirical bayes
-    'MXETEB' = maximum entropy / empirical bayes - DON'T USE IF SWITCH = 0
-    'STIRDG' = stipulated ridge - Shurygin 1983
-    'STIDAG' = stipulated diagonal - Shurygin 1983
-    'CONSUM' = convex sum - Chen 1976
-    'LEDWLF' = ledoit wolf - Ledoit & Wolf 2003
-    'THOMAZ' = Thomaz eigen stabilization Thomaz 2004
-    'RDGREG' = ridge regularization, requires 6th parameter (alpha)
+  'MLE' = maximum likelihood estimator
+  'MAXENT' = maximum entropy - Fiebig 1982 - DON'T USE IF SWITCH = 0
+  'MLE/EB' = maximum likelihood / empirical bayes
+  'MXETEB' = maximum entropy / empirical bayes - DON'T USE IF SWITCH = 0
+  'STIRDG' = stipulated ridge - Shurygin 1983
+  'STIDAG' = stipulated diagonal - Shurygin 1983
+  'CONSUM' = convex sum - Chen 1976
+  'LEDWLF' = ledoit wolf - Ledoit & Wolf 2003
+  'THOMAZ' = Thomaz eigen stabilization Thomaz 2004
+  'RDGREG' = ridge regularization, requires 6th parameter (alpha)
   data input switch --- 1 = data, 0 = covariance
   problem only --- 1 = If not MatrixProblem, don't smooth; 0 = always
   number observations --- salar number of observations in dataset
@@ -29,7 +31,7 @@ function smcov = CovSmooth(data_matrix,meth,swtch,ifprob,numobs,regul_amnt)
   Example: CovSmooth(rand(4),'CONSUM',0,1,100)
 
   See Also MatrixProblem
-  
+
   Copyright (C) 2006 J. Andrew Howe; see below
 %}
 
@@ -126,9 +128,11 @@ switch(meth)
         smcov = cov_mat;
 end
 
-%{ JAH 20060214, Brant Quinton April 2010, JAH adapted for octave 3.4.3 20120305
+%{
+JAH 20060214, Brant Quinton April 2010, JAH adapted for octave 3.4.3 20120305
 
 Copyright (C) 2006 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -140,4 +144,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}

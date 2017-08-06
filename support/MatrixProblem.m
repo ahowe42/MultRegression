@@ -1,5 +1,7 @@
 function probcode = MatrixProblem(sqmat,printmess,rclim)
-%{ problem code = MatrixProblem(square matrix, print message, rcond limit)
+%{
+  problem code = MatrixProblem(square matrix, print message, rcond limit)
+
   This function will take in a square, presumably covariance, matrix and
   evaluate it for ill-conditionedness and positive definitedness, in that
   order.
@@ -14,7 +16,7 @@ function probcode = MatrixProblem(sqmat,printmess,rclim)
   Example: MatrixProblem(rand(4),1)
 
   
-Copyright (C) 2007 J. Andrew Howe; see below
+  Copyright (C) 2007 J. Andrew Howe; see below
 %}
 
 [d1,d2] = size(sqmat);
@@ -47,9 +49,11 @@ if printmess
     disp('Matrix Has No Detected Problems')
 end
 
-%{ JAH 20070305, adapted for octave 3.4.3 20120305
+%{
+JAH 20070305, adapted for octave 3.4.3 20120305
 
 Copyright (C) 2007 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -61,4 +65,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}
