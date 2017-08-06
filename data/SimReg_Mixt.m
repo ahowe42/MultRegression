@@ -1,5 +1,8 @@
 function [y,x,trueM] = SimReg_Mixt(n,numred,mv)
-%{ [responses, predictors, true model] = SimReg_Mixt(number observations, number junk variables, multivariate flag)
+%{
+  [responses, predictors, true model] = SimReg_Mixt(number observations, 
+  number junk variables, multivariate flag)
+
   Simulate regression data where the first five (after constant)
   predictors are correlated.  The responses are created from from the first
   four (including constant) predictors with mixtures of normals error
@@ -81,9 +84,11 @@ trueM.coefs = B;
 trueM.sigma = nan;
 trueM.gen = 'SimReg_Mixt';
 
-%{ JAH 20070502, 20120218
+%{
+JAH 20070502, 20120218
 
 Copyright (C) 2007 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -95,4 +100,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}

@@ -1,5 +1,8 @@
 function [y,x,trueM] = SimReg_NonNorm(n,numred,mv)
-%{ [responses, predictors, true model] = SimReg_NonNorm(number observations,number redundant variables,multivariate flag)
+%{
+  [responses, predictors, true model] = SimReg_NonNorm(number observations,
+  number redundant variables,multivariate flag)
+
   Simulate regression data such that selection of the correct model should
   not violate the assumption that error terms are normal.  However, if an
   incorrect model is fit, the error terms will be bimodal.  Also present in
@@ -75,9 +78,11 @@ trueM.coefs = B;
 trueM.sigma = sigma;
 trueM.gen = 'SimReg_NonNorm';
 
-%{ JAH 20150703
+%{
+JAH 20150703
 
 Copyright (C) 2015 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -89,4 +94,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}

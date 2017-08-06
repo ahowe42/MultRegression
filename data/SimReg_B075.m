@@ -1,5 +1,8 @@
 function [y,x,trueM] = SimReg_B075(n,numred,mv)
-%{ [responses, predictors, true model] = SimReg_B075(number observations, number junk variables,multivariate flag)
+%{
+  [responses, predictors, true model] = SimReg_B075(number observations, 
+  number junk variables,multivariate flag)
+
   Simulate misspecified regression data where the first five (after constant)
   predictors are correlated.  The responses are created from from the first
   four (including constant) predictors with multivariate PE error terms
@@ -68,9 +71,11 @@ trueM.coefs = B;
 trueM.sigma = sigma;
 trueM.gen = 'SimReg_B075';
 
-%{ JAH 20070404, 20120218
+%{
+JAH 20070404, 20120218
 
 Copyright (C) 2007 J. Andrew Howe
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -82,4 +87,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}
