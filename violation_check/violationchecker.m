@@ -1,5 +1,7 @@
 function viola = violationchecker(x, beta, residuals, stats, confviola)
-%{ violation_flags = violationchecker(X, betas, residuals, regress_stats, test_options)
+%{
+  violation_flags = violationchecker(X, betas, residuals, regress_stats, test_options)
+
   Check the results from application of a multiple regression model against
   several modeling assumptions and requirements as follows:
   p: valid model: F-test for regression model must be < specified confidence
@@ -99,4 +101,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.%}
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}
